@@ -12,7 +12,7 @@ class NeuralNetwork:
     def train(self, inputs_list, targets_list): 
         #convert inputs_list into 2D array for matrix multiplication
         hiddenInputs = numpy.dot(self.wih, inputs)
-        self.activation = lambda(x): scipy.special.expit(x)
+        self.activation = lambda x: scipy.special.expit(x)
         hiddenOuputs = self.activation(hiddenInputs)
         outputInputs = numpy.dot(self.who, hiddenOutputs)
         outputOutputs = self.activation(outputInputs)
@@ -22,7 +22,7 @@ class NeuralNetwork:
     def query(self, inputs_list):
         #convert inputs_list into 2D array for matrix multiplication
         hiddenInputs = numpy.dot(self.wih, inputs)
-        self.activation = lambda(x): scipy.special.expit(x)
+        self.activation = lambda x: scipy.special.expit(x)
         hiddenOuputs = self.activation(hiddenInputs)
         outputInputs = numpy.dot(self.who, hiddenOutputs)
         outputOutputs = self.activation(outputInputs)
