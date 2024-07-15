@@ -7,7 +7,7 @@ class neuralNetwork:
         self.onodes = outputNodes
         self.lr = learningrate
         self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5),(self.hnodes, self.inodes))
-        self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hodes))
+        self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
         pass
     def train(self, inputs_list, targets_list): 
         #convert inputs_list and target_list into 2D array for matrix multiplication
@@ -36,3 +36,6 @@ class neuralNetwork:
         outputOutputs = self.activation(outputInputs)
         return outputOutputs
         pass
+input = hidden = output = 3
+learn = 0.3
+n = neuralNetwork(input, hidden, output, learn)
